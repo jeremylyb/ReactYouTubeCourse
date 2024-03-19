@@ -1,3 +1,8 @@
+/*
+    Basic seed data where we can we use to create initial note to test data
+*/
+
+
 export const data = [
     {
         id: 1,
