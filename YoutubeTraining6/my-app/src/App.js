@@ -4,7 +4,6 @@ import './App.css';
 import React from "react"
 import Sidebar from "./Components/Sidebar"
 import Editor from "./Components/Editor"
-import { data } from "./data"
 import Split from "react-split"
 import {nanoid} from "nanoid"
 
@@ -90,7 +89,12 @@ export default function App() {
         () => JSON.parse(localStorage.getItem("notes")) || []       
     )
     const [currentNoteId, setCurrentNoteId] = React.useState(
-        (notes[0] && notes[0].id) || ""
+        /*  Optional chaining operator:
+            Instead of checking notes[0] exist before access the id property of it
+            We can actually use a "?." operator
+        */
+        // (notes[0] && notes[0].id) || ""
+        (notes[0]?.id) || ""
     )
 
    React.useEffect(()=> {
@@ -191,11 +195,23 @@ export default function App() {
         setNotes(oldNotes => oldNotes.filter((note)=>note.id !==noteId))
     }
 
-    function findCurrentNote() {
-        return notes.find(note => {
-            return note.id === currentNoteId
-        }) || notes[0]
-    }
+    /*
+        Notice below return section, we utilize findCurrentNote twice. Instead
+        we can derive the current note based on the currentNoteId save in state
+        whenever the app is rendered.
+        This can be done through defining a const which execute the similar 
+        logic to find the current note through an arrow function
+    */
+    const currentNote = notes.find(note => {
+                return note.id === currentNoteId
+            }) || notes[0]
+
+    // No longer required
+    // function findCurrentNote() {
+    //     return notes.find(note => {
+    //         return note.id === currentNoteId
+    //     }) || notes[0]
+    // }
     
     return (
         <main>
