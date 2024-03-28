@@ -1,0 +1,114 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family: Inter, sans-serif;
+    background-color: #282d35;
+    height: 100vh;
+}
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #21222a;
+    height: 90px;
+    padding: 30px 25px;
+}
+
+/* 
+- nav > h3: This selects <h3> elements that are direct children 
+(immediate descendants) of <nav> elements. 
+
+- { margin: 0; }: This is the declaration block enclosed in curly 
+braces. It sets the margin property of the selected elements to 0, 
+effectively removing any margins they might have.
+
+*/
+.nav-h3, .nav-h4{
+    margin: 0;
+
+}
+
+/*
+- margin-right: auto;: This sets the right margin of the selected 
+<h3> elements to auto. This means that the browser will automatically 
+calculate the right margin based on the available space, effectively 
+aligning the element to the left within its container.
+
+- Using nav = using their native component. Good practice is to
+define the className for each element.
+
+*/
+
+.nav-h4{
+    color: #deebf8;
+    font-weight: 600;
+}
+
+.nav-h3{
+    margin-right: auto;
+    color: #61dafb;
+    font-size: 30px;
+}
+
+.nav-icon{
+    height: 50px;
+    margin-right: 7px;
+    size:200px;
+}
+
+
+/* main { padding: 57px 27px; }: This CSS rule targets the <main> element in HTML 
+(assuming there is one) and applies padding to it. Padding is the space between the 
+content of an element and its border. The values 57px and 27px represent the padding 
+applied to the top/bottom and left/right sides of the <main> element, respectively. 
+So, there would be 57 pixels of padding on the top and bottom and 27 pixels of 
+padding on the left and right. */
+main{
+    padding:57px 100px;
+    color: white;
+    background-image: url(../Images/logo192.png);
+    background-repeat: no-repeat;
+    background-position-y:75%;
+    background-position-x: 135%;
+    /* background-position: right 75%; */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* h1 { margin: 0; }: This CSS rule targets all <h1> elements in HTML and sets their 
+margin to 0. The margin is the space outside the border of an element. By setting the 
+margin to 0, it removes any default margin that might be applied to <h1> elements, 
+effectively positioning them closer to other elements. */
+
+h1 {
+    margin:0;
+}
+
+.main-title {
+    margin:0;
+    font-size: 39px;
+    letter-spacing: -0.05em;
+    /* font-family: Inter; */
+    /* font-style: normal; */
+    /* font-weight: bold; */
+    /* font-size: 39.06px; */
+    /* line-height: 47px; */
+
+
+}
+
+.main-facts{
+    margin-top: 46px;
+    max-width:400px;
+}
+
+.main-facts> li{
+    line-height: 19px;
+    padding-block: 10px;
+}
+
+.main-facts>  ::marker{
+    font-size: 1.4rem;
+    color: #61dafb
+}
